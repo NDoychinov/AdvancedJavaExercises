@@ -18,8 +18,6 @@ public class Problem6_FindTheSmallestElement {
             nums = Arrays.asList(input.trim().split("\\s+")).stream().map(s -> Long.parseLong(s)).collect(Collectors.toList());
 
             Long min = Long.MAX_VALUE;
-
-
             for (int i = 0; i < nums.size(); i++) {
                 if (nums.get(i) <= min) {
                     min = nums.get(i);
@@ -28,6 +26,5 @@ public class Problem6_FindTheSmallestElement {
             }
         }
         System.out.println(minIndex);
-
     }
 }
