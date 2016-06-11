@@ -9,18 +9,18 @@ public class Problem7_SumBigNumbers {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        String num1 = sc.nextLine().trim();
-        String num2 = sc.nextLine().trim();
+        StringBuilder num1 = new StringBuilder(sc.nextLine().trim());
+        StringBuilder num2 = new StringBuilder(sc.nextLine().trim());
         
         if (num1.length() > num2.length()){
             int lenght = num1.length() - num2.length();
             for (int i = 0; i < lenght; i++) {
-                num2 = "0" + num2;
+                num2 = new StringBuilder("0" + num2);
             }
         } else {
             int lenght = num2.length() - num1.length();
             for (int i = 0; i < lenght; i++) {
-                num1 = "0" + num1;
+                num1 = new StringBuilder("0" + num1);
             }
         }
 
@@ -33,6 +33,15 @@ public class Problem7_SumBigNumbers {
         if (rest != 0) {
             System.out.printf("" + rest);
         }
+
+        for (int i = 0; i < result.length(); i++) {
+            if (result.charAt(i) == '0'){
+                result = result.substring(i + 1, result.length());
+            } else {
+                break;
+            }
+        }
+
         System.out.println(result);
     }
 }
